@@ -1,0 +1,22 @@
+name: visiology
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+jobs:
+  lint-code:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: checkout code
+      uses: actions/checkout@v4
+
+    - name: setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+    - name: install dependencies
+      run: npm install
+    - name: run ESLint
+      run: npm run lint
