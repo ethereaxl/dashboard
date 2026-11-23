@@ -19,4 +19,4 @@ jobs:
     - name: install dependencies
       run: npm install
     - name: run ESLint
-      run: npm run lint
+      run: npx eslint .
